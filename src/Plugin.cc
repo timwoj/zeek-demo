@@ -5,6 +5,11 @@ namespace plugin { namespace Demo_AllCaps { Plugin plugin; } }
 
 using namespace plugin::Demo_AllCaps;
 
+Plugin::Plugin()
+	{
+	EnableHook(HOOK_LOAD_FILE);
+	}
+
 plugin::Configuration Plugin::Configure()
 	{
 	plugin::Configuration config;
@@ -14,4 +19,13 @@ plugin::Configuration Plugin::Configure()
 	config.version.minor = 1;
 	config.version.patch = 0;
 	return config;
+	}
+
+int Plugin::HookLoadFile(const LoadType type, const std::string& file, const std::string& resolved)
+	{
+	if (type == LoadType::SCRIPT) {
+		printf("Loaded script from %s\n", file.c_str());
+	}
+
+	return -1;
 	}
