@@ -1,1 +1,19 @@
+module Demo;
 
+##
+## Capitalizes all letters of a string
+##
+function allcaps%(s: string%) : string
+    %{
+    char *allcaps = copy_string(s->CheckString());
+    for (char* p = allcaps; *p; p++)
+        {
+        if (*p >= 'a' && *p <= 'z')
+            {
+            *p = *p + ('A' - 'a');
+            }
+        }
+
+    BroString* bs = new BroString(1, reinterpret_cast<byte_vec>(allcaps), strlen(allcaps));
+    return new StringVal(bs);
+    %}

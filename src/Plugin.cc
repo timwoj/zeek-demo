@@ -9,7 +9,7 @@ plugin::Configuration Plugin::Configure()
 	{
 	plugin::Configuration config;
 	config.name = "Demo::AllCaps";
-	config.description = "<Insert description>";
+	config.description = "Capitalize all letters of any string";
 	config.version.major = 0;
 	config.version.minor = 1;
 	config.version.patch = 0;
