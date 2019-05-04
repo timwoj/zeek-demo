@@ -6,6 +6,7 @@ project(BroPluginAllCaps)
 include(BroPlugin)
 
 bro_plugin_begin(Demo AllCaps)
+bro_plugin_cc(src/CSV.cc)
 bro_plugin_cc(src/Plugin.cc)
 bro_plugin_bif(src/allcaps.bif)
 bro_plugin_dist_files(README CHANGES COPYING VERSION)

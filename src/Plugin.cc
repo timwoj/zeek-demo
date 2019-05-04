@@ -1,5 +1,5 @@
-
 #include "Plugin.h"
+#include "CSV.h"
 
 namespace plugin { namespace Demo_AllCaps { Plugin plugin; } }
 
@@ -8,6 +8,7 @@ using namespace plugin::Demo_AllCaps;
 Plugin::Plugin()
 	{
 	EnableHook(HOOK_LOAD_FILE);
+        AddComponent(new ::logging::Component("CSV", ::logging::writer::CSV::Instantiate));
 	}
 
 plugin::Configuration Plugin::Configure()
